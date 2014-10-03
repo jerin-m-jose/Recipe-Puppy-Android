@@ -1,0 +1,15 @@
+package com.jerin.DataConstants;
+
+/**
+ * Class for storing Magic Recipe Data constants.
+ * @author jerin
+ *
+ */
+public class MagicRecipeData {
+
+	/**
+	 * Base Url for Recipe Puppy
+	 */
+	public static String MAGICRECIPE_BASE_URL = "";
+	
+}

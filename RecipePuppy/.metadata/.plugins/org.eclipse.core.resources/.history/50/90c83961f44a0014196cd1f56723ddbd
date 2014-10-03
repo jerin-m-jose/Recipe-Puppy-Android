@@ -1,0 +1,16 @@
+package com.jerin.magicrecipe.data;
+
+/**
+ * Class representing a REcipe Item.
+ * 
+ * @author jerin
+ *
+ */
+public class RecipeItem {
+	
+	public RecipeItem() {
+	}
+
+	
+	
+}

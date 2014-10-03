@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.jerin.DataConstants.MagicRecipeData"/>
+<fullyQualifiedTypeName name="android.support.v7.widget.SearchView"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+<fullyQualifiedTypeName name="android.os.AsyncTask"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.jerin.utilities.HttpRequestTask"/>
+<fullyQualifiedTypeName name="org.apache.http.client.HttpClient"/>
+<fullyQualifiedTypeName name="org.apache.http.client.methods.HttpGet"/>
+<fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
+<fullyQualifiedTypeName name="com.jerin.magicrecipe.R.id"/>
+<fullyQualifiedTypeName name="com.jerin.utilities.RequestTask"/>
+<fullyQualifiedTypeName name="com.jerin.utilities.Utilities"/>
+<fullyQualifiedTypeName name="com.jerin.dataconstants.MagicRecipeData"/>
+<fullyQualifiedTypeName name="com.jerin.utilities.RequestTask.IRequestResponseListener"/>
+<fullyQualifiedTypeName name="com.jerin.fragments.TodaysSpecialFragment"/>
+<fullyQualifiedTypeName name="java.lang.ref.WeakReference"/>
+<fullyQualifiedTypeName name="android.net.Uri"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.jerin.magicrecipe.dataconstants.MagicRecipeData"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="com.jerin.magicrecipe.adapters.RecipeSlideAdapter"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="com.jerin.magicrecipe.data.RecipeItem"/>
+<fullyQualifiedTypeName name="android.os.Parcelable"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="com.nostra13.universalimageloader.core.DisplayImageOptions"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="android.widget.ImageView.ScaleType"/>
+<fullyQualifiedTypeName name="android.view.ViewGroup.LayoutParams"/>
+<fullyQualifiedTypeName name="android.widget.RelativeLayout"/>
+<fullyQualifiedTypeName name="com.jerin.magicrecipe.R"/>
+<fullyQualifiedTypeName name="com.jerin.magicrecipe.R.layout"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="com.jerin.magicrecipe.fragments.RecipePageFragment"/>
+<fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
+<fullyQualifiedTypeName name="com.jerin.magicrecipe.fragments.RecipeContainerFragment"/>
+<fullyQualifiedTypeName name="com.jerin.magicrecipe.data.MagicRecipeConstants"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+</qualifiedTypeNameHistroy>

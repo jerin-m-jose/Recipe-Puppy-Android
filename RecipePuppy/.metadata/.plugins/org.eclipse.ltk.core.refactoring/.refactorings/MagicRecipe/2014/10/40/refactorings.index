@@ -1,0 +1,43 @@
+1412320903035	Copy file
+1412321092425	Rename resource 'RecipePuppy.png'
+1412321677186	Rename package 'com.jerin.DataConstants'
+1412325048731	Rename field 'mQueryString'
+1412325654927	Rename compilation unit 'QueryBuilder.java'
+1412326699127	Rename compilation unit 'HttpRequestTask.java'
+1412330684779	Extract method 'extracted'
+1412331335295	Rename field 'listener'
+1412331377448	Rename package 'com.jerin.dataconstants'
+1412331388674	Rename package 'com.jerin.fragments'
+1412331614715	Extract method 'extracted'
+1412331669182	Rename field 'requestTask'
+1412333800507	Rename type 'TodaysSpecialFragment'
+1412333918634	Rename field 'MAGICRECIPE_PATH'
+1412335257071	Rename type 'RecipePagerFragment'
+1412335289707	Rename method 'loadData'
+1412335384640	Rename resource 'fragment_todays_special.xml'
+1412336313842	Copy file
+1412337250758	Rename package 'com.jerin.magicrecipe.dataconstants'
+1412337261179	Rename type 'MagicRecipeData'
+1412337269649	Rename type 'MagicRecipeDataConstants'
+1412337379751	Encapsulate field 'mTitle'
+1412337391403	Encapsulate field 'mUrl'
+1412337404847	Encapsulate field 'mDesc'
+1412337465300	Rename field 'mTitle'
+1412337475475	Rename field 'mDesc'
+1412337487275	Rename field 'mUrl'
+1412337961015	Rename type 'RecipeSlideAdapter'
+1412338424383	Rename local variable 'recipeItems'
+1412338773422	Rename field 'mRecipeDesc'
+1412340304052	Extracts string 'Ingredients:' into R.string.ingredients
+1412342592852	Delete element
+1412345122207	Extract method 'extracted'
+1412345212617	Copy file
+1412345815336	Extracts string 'onions,garlic' into R.string.ingredients_search_hint
+1412345854131	Extracts string 'omelet' into R.string.dish_search_hint
+1412345902016	Extracts string 'Ingredients:' into R.string.search_ingredients
+1412345911756	Extracts string 'Dish:' into R.string.search_dish
+1412346479732	Extracts string 'Search' into R.string.search
+1412347264363	Rename field 'MAGICRECIPE_ARGS_KEY'
+1412347271494	Rename field 'MAGICRECIPE_FRAGMNENT_ARGS_KEY'
+1412348437028	Rename method 'restoreActionBar'
+1412348992567	Rename type 'RecipeContainerFragment'

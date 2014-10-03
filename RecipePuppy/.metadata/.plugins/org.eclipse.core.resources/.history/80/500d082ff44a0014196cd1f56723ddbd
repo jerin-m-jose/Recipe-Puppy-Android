@@ -1,0 +1,10 @@
+package com.jerin.magicrecipe.data;
+
+public class RecipeItem {
+	
+	public RecipeItem() {
+	}
+
+	
+	
+}

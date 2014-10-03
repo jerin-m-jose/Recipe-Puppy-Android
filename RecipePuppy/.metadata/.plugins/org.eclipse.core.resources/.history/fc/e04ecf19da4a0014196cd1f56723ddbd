@@ -1,0 +1,9 @@
+package com.jerin.utilities;
+
+import android.os.AsyncTask;
+
+public class HttpRequestTask extends AsyncTask<String, Integer, String> {
+
+	
+
+}

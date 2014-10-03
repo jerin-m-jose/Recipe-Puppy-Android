@@ -1,0 +1,26 @@
+package com.jerin.utilities;
+
+public class QueryBuilder {
+
+	private StringBuilder mQueryBuilder;
+	private String mBaseURL;
+	private String mBaseURL;
+	
+	public QueryBuilder() {
+		mQueryBuilder = new StringBuilder();
+	}
+
+	public void setBaseURL(String sBaseURL) {
+		mQueryBuilder.append(sBaseURL);
+	}
+
+	public String build() {
+		if (null == mBaseURL) {
+			throw new NullPointerException();
+		}
+		
+		mQueryBuilder.append(mBaseURL);
+		
+		return mQueryBuilder.toString();
+	}
+}

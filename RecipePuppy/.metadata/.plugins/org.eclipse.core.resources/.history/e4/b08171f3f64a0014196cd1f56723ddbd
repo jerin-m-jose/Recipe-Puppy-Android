@@ -1,0 +1,142 @@
+package com.jerin.magicrecipe.fragments;
+
+import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.jerin.magicrecipe.MainActivity;
+import com.jerin.magicrecipe.R;
+import com.jerin.magicrecipe.adapters.RecipePagerAdapter;
+import com.jerin.magicrecipe.data.MagicRecipeConstants;
+import com.jerin.magicrecipe.data.RecipeItem;
+import com.jerin.utilities.RequestTask;
+import com.jerin.utilities.RequestTask.IRequestResponseListener;
+import com.jerin.utilities.Utilities;
+
+/**
+ * Fragment to show recipes in a viewpager.
+ * 
+ * @author jerin
+ * 
+ */
+public class RecipeContainerFragment extends Fragment implements
+		IRequestResponseListener {
+
+	private final String _TAG = RecipeContainerFragment.class.getSimpleName();
+
+	private RequestTask mRequestTask;
+
+	/**
+	 * The pager widget, which handles animation and allows swiping horizontally
+	 * to access previous and next wizard steps.
+	 */
+	private ViewPager mPager;
+
+	/**
+	 * The pager adapter, which provides the pages to the view pager widget.
+	 */
+	private RecipePagerAdapter mPagerAdapter;
+
+	public RecipeContainerFragment() {
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater,
+			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		View fragmentView;
+		fragmentView = inflater.inflate(R.layout.fragment_recipe_container,
+				container, false);
+
+		// Instantiate a ViewPager and a PagerAdapter.
+		mPager = (ViewPager) fragmentView.findViewById(R.id.pager);
+		mPagerAdapter = new RecipePagerAdapter(getFragmentManager());
+		mPager.setAdapter(mPagerAdapter);
+
+		sendRequest();
+		return fragmentView;
+	}
+
+	/**
+	 * Execute HTTP request to fetch recipes.
+	 */
+	private void sendRequest() {
+		Bundle arguments = getArguments();
+		Uri query = Utilities.buildUri(
+				MagicRecipeConstants.MAGICRECIPE_BASE_URL,
+				MagicRecipeConstants.MAGICRECIPE_URL_PATH, arguments);
+		mRequestTask = new RequestTask();
+		mRequestTask.setListener(this);
+		mRequestTask.execute(query.toString());
+	}
+
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		((MainActivity) activity).onSectionAttached(getArguments().getInt(
+				MagicRecipeConstants.MAGICRECIPE_TAB_KEY));
+	}
+
+	@Override
+	public void onRequestComplete(String response) {
+		Log.d(_TAG, response);
+
+		ArrayList<RecipeItem> recipeItems = parseDataFrom(response);
+		mPagerAdapter.setData(recipeItems);
+	}
+
+	private ArrayList<RecipeItem> parseDataFrom(String response) {
+		ArrayList<RecipeItem> recipeList = new ArrayList<RecipeItem>();
+
+		JSONObject jsonObject;
+		if (null != response && (response.trim().length() > 0)) {
+			try {
+				jsonObject = new JSONObject(response);
+
+				JSONArray jsonArray = jsonObject
+						.getJSONArray(MagicRecipeConstants.MAGICRECIPE_JSON_KEY_RESULTS);
+
+				if (null != jsonArray) {
+					int size = jsonArray.length();
+
+					JSONObject jsonObject2 = jsonArray.getJSONObject(index);
+					
+					for (int index = 0; index < size; index++) {
+						RecipeItem recipeItem = new RecipeItem();
+						recipeItem.setRecipeTitle(mTitle);
+						recipeItem.setImageUrl(mUrl);
+						recipeItem.setDescription(mDesc);
+						recipeList.add(recipeItem);
+					}
+				}
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return recipeList;
+	}
+
+	@Override
+	public void onDestroyView() {
+		if (null != mRequestTask) {
+			mRequestTask.setListener(null);
+			mRequestTask.cancel(true);
+		}
+		super.onDestroyView();
+	}
+}

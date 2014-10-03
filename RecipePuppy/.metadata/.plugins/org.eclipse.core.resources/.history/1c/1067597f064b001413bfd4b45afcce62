@@ -1,0 +1,7 @@
+package com.jerin.magicrecipe.fragments;
+
+import android.support.v4.app.Fragment;
+
+public class RecipeSearchFragment extends Fragment {
+
+}

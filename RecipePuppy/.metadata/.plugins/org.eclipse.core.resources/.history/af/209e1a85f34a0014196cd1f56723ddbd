@@ -1,0 +1,27 @@
+package com.jerin.magicrecipe.dataconstants;
+
+/**
+ * Class for storing Magic Recipe Data constants.
+ * 
+ * @author jerin
+ * 
+ */
+public class MagicRecipeData {
+
+	/**
+	 * Base Url for Recipe Puppy.
+	 */
+	public static String MAGICRECIPE_BASE_URL = "www.recipepuppy.com";
+
+	public static String MAGICRECIPE_URL_PATH = "api";
+
+	public static final String MAGICRECIPE_TAB_KEY = "magicrecipe_tab_key";
+
+	public static final int MAGICRECIPE_TAB_TODAYS_SPECIAL = 0;
+
+	public static final int MAGICRECIPE_TAB_SEARCH_RECIPES = 1;
+	
+	
+	public static final String MAGICRECIPE_ARGS_TITLE_KEY = "magicrecipe_args_title_key";
+
+}

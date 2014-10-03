@@ -1,0 +1,21 @@
+package com.jerin.utilities;
+
+public class QueryBuilder {
+
+	private StringBuilder sQuery;
+
+	public QueryBuilder() {
+		sQuery = new StringBuilder();
+	}
+
+	public void setBaseURL(String sBaseURL){
+		sQuery.append(sBaseURL);
+	}
+	
+	public String build(){
+		if(null == sQuery){
+			throw new NullPointerException();
+		}
+		return sQuery.toString();
+	}
+}

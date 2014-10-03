@@ -1,0 +1,64 @@
+package com.jerin.magicrecipe.fragments;
+
+import com.jerin.magicrecipe.MainActivity;
+import com.jerin.magicrecipe.R;
+import com.jerin.magicrecipe.data.MagicRecipeConstants;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class RecipeSearchFragment extends Fragment implements OnClickListener {
+
+	private EditText mIngredientsEditText;
+	private EditText mDishEditText;
+	private Button mSearchButton;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater,
+			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+		View fragmentView = inflater.inflate(R.layout.fragment_search,
+				container, false);
+		mIngredientsEditText = (EditText) fragmentView
+				.findViewById(R.id.ingredientsEditText);
+		mDishEditText = (EditText) fragmentView.findViewById(R.id.dishEditText);
+		mSearchButton = (Button) fragmentView.findViewById(R.id.searchButton);
+		mSearchButton.setOnClickListener(this);
+		return fragmentView;
+	}
+
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		((MainActivity) activity).onSectionAttached(getArguments().getInt(
+				MagicRecipeConstants.MAGICRECIPE_TAB_KEY));
+	}
+
+	@Override
+	public void onClick(View v) {
+
+		Fragment contentFragment = new RecipeContainerFragment();
+		Bundle arguments = new Bundle();
+		arguments.putString(
+				MagicRecipeConstants.MAGICRECIPE_URL_INGREDIENTS_PARAM,
+				mIngredientsEditText.getText().toString());
+
+		arguments.putString(MagicRecipeConstants.MAGICRECIPE_URL_DISH_PARAM,
+				mDishEditText.getText().toString());
+
+		contentFragment.setArguments(arguments);
+		((MainActivity) getActivity()).attachContentFragment(
+				MagicRecipeConstants.MAGICRECIPE_TAB_SEARCH_RESULTS,
+				contentFragment);
+
+	}
+
+}

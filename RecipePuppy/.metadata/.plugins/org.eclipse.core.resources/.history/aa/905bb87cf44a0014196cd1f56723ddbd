@@ -1,0 +1,42 @@
+package com.jerin.magicrecipe.data;
+
+/**
+ * Class representing a Recipe Item.
+ * 
+ * @author jerin
+ * 
+ */
+public class RecipeItem {
+
+	private String mTitle;
+	private String mUrl;
+	private String mDesc;
+
+	public RecipeItem() {
+	}
+
+	public String getRecipeTitle() {
+		return mTitle;
+	}
+
+	public void setRecipeTitle(String mTitle) {
+		this.mTitle = mTitle;
+	}
+
+	public String getImageUrl() {
+		return mUrl;
+	}
+
+	public void setImageUrl(String mUrl) {
+		this.mUrl = mUrl;
+	}
+
+	public String getDescription() {
+		return mDesc;
+	}
+
+	public void setDescription(String mDesc) {
+		this.mDesc = mDesc;
+	}
+
+}

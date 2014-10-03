@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Magic Recipe</string>
+    <string name="title_section1">Today\'s Special</string>
+    <string name="title_section2">Search Recipes</string>
+    <string name="title_section3">Search Results</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_search_hint">Ingredients</string>
+    <string name="action_search">Search</string>
+    <string name="action_settings">Settings</string>
+    <string name="recipe_image">Recipe Image</string>
+    <string name="ingredients">Ingredients:</string>
+
+</resources>

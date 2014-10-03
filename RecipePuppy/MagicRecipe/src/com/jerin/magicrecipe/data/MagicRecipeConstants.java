@@ -1,0 +1,73 @@
+package com.jerin.magicrecipe.data;
+
+/**
+ * Class for storing Magic Recipe constants.
+ * 
+ * @author jerin
+ * 
+ */
+public class MagicRecipeConstants {
+
+	/**
+	 * Base Url for Recipe Puppy backend calls.
+	 */
+	public static String MAGICRECIPE_BASE_URL = "www.recipepuppy.com";
+
+	/**
+	 * The url path for Recipe Puppy backend calls.
+	 */
+	public static String MAGICRECIPE_URL_PATH = "api";
+
+	/**
+	 * The query parameter key for Ingredients.
+	 */
+	public static final String MAGICRECIPE_URL_INGREDIENTS_PARAM = "i";
+
+	/**
+	 * The query parameter key for Dishes.
+	 */
+	public static final String MAGICRECIPE_URL_DISH_PARAM = "q";
+
+	/**
+	 * The json key to get all recipe list array from backend response.
+	 */
+	public static final String MAGICRECIPE_JSON_KEY_RESULTS = "results";
+
+	/**
+	 * The json key to get all recipe title from backend response.
+	 */
+	public static final String MAGICRECIPE_JSON_KEY_TITLE = "title";
+
+	/**
+	 * The json key to get all recipe ingredients from backend response.
+	 */
+	public static final String MAGICRECIPE_JSON_KEY_INGREDIENTS = "ingredients";
+
+	/**
+	 * The json key to get all recipe image url from backend response.
+	 */
+	public static final String MAGICRECIPE_JSON_KEY_IMAGE_URL = "thumbnail";
+
+	/**
+	 * The fragment arguments key to identify fragment title.
+	 */
+	public static final String MAGICRECIPE_TAB_KEY = "magicrecipe_tab_key";
+
+	/**
+	 * Unique tab id to specify fragment title.
+	 */
+	public static final int MAGICRECIPE_TAB_TODAYS_SPECIAL = 0;
+
+	/**
+	 * Unique tab id to specify fragment title.
+	 */
+	public static final int MAGICRECIPE_TAB_SEARCH_RECIPES = 1;
+
+	/**
+	 * Unique tab id to specify fragment title.
+	 */
+	public static final int MAGICRECIPE_TAB_SEARCH_RESULTS = 2;
+
+	public static final String MAGICRECIPE_FRAGMENT_ARGS_KEY = "magicrecipe_fragment_args_key";
+
+}

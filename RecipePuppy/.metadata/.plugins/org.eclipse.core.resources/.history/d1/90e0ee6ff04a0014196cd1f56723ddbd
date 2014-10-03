@@ -1,0 +1,80 @@
+package com.jerin.magicrecipe.fragments;
+
+import android.app.Activity;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.jerin.magicrecipe.MainActivity;
+import com.jerin.magicrecipe.R;
+import com.jerin.magicrecipe.dataconstants.MagicRecipeData;
+import com.jerin.utilities.RequestTask;
+import com.jerin.utilities.RequestTask.IRequestResponseListener;
+import com.jerin.utilities.Utilities;
+
+/**
+ * Fragment to show recipes in a viewpager.
+ * 
+ * @author jerin
+ * 
+ */
+public class RecipeContainerFragment extends Fragment implements
+		IRequestResponseListener {
+
+	private final String _TAG = RecipeContainerFragment.class.getSimpleName();
+
+	private RequestTask mRequestTask;
+
+	public RecipeContainerFragment() {
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater,
+			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		View fragmentView;
+		fragmentView = inflater.inflate(R.layout.fragment_recipe_container,
+				container, false);
+		
+		sendRequest();
+		return fragmentView;
+	}
+
+	/**
+	 * Execute HTTP request to fetch recipes.
+	 */
+	private void sendRequest() {
+		Bundle arguments = getArguments();
+		Uri query = Utilities.buildUri(MagicRecipeData.MAGICRECIPE_BASE_URL,
+				MagicRecipeData.MAGICRECIPE_URL_PATH, arguments);
+		mRequestTask = new RequestTask();
+		mRequestTask.setListener(this);
+		mRequestTask.execute(query.toString());
+	}
+
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		((MainActivity) activity)
+				.onSectionAttached(getArguments().getInt(MagicRecipeData.MAGICRECIPE_TAB_KEY));
+	}
+
+	@Override
+	public void onRequestComplete(String response) {
+		Log.d(_TAG, response);
+
+	}
+
+	@Override
+	public void onDestroyView() {
+		if (null != mRequestTask) {
+			mRequestTask.setListener(null);
+			mRequestTask.cancel(true);
+		}
+		super.onDestroyView();
+	}
+}

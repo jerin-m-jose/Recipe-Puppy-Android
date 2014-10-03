@@ -1,0 +1,7 @@
+package com.jerin.DataConstants;
+
+public class MagicRecipeData {
+
+	public static String MAGICRECIPE_BASE_URL = "";
+	
+}

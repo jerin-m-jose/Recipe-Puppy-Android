@@ -1,0 +1,40 @@
+package com.jerin.utilities;
+
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+
+public class HttpRequestTask extends AsyncTask<String, Integer, String> {
+
+	private String mAuthority;
+	private String mPath;
+	private Bundle mBundle;
+	
+	public HttpRequestTask(String sAuthority, String path, Bundle params){
+		mAuthority = sAuthority;
+	}
+	
+	@Override
+	protected void onPreExecute() {
+		// TODO Auto-generated method stub
+		super.onPreExecute();
+	}
+
+	@Override
+	protected String doInBackground(String... params) {
+		
+		Uri uri = Utilities.buildUri(mAuthority, mPath, mBundle);
+		HttpGet httpGet = new HttpGet(uri.toString());
+		return null;
+	}
+
+	@Override
+	protected void onPostExecute(String result) {
+		// TODO Auto-generated method stub
+		super.onPostExecute(result);
+	}
+
+}

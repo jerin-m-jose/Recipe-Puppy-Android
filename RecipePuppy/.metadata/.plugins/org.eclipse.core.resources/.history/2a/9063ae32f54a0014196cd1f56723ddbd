@@ -1,0 +1,42 @@
+package com.jerin.magicrecipe.adapters;
+
+import java.util.ArrayList;
+
+import com.jerin.magicrecipe.data.MagicRecipeConstants;
+import com.jerin.magicrecipe.data.RecipeItem;
+import com.jerin.magicrecipe.fragments.RecipePageFragment;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+
+public class RecipeSlideAdapter extends FragmentStatePagerAdapter {
+
+	private ArrayList<RecipeItem> recipeItems;
+
+	public RecipeSlideAdapter(FragmentManager fm) {
+		super(fm);
+	}
+
+	public void setData(ArrayList<RecipeItem> recipeItems){
+		this.recipeItems = recipeItems;
+		notifyDataSetChanged();
+	}
+	
+	@Override
+	public Fragment getItem(int index) {
+		RecipePageFragment recipePageFragment = new RecipePageFragment();
+		Bundle args = new Bundle();
+		args.putSerializable(MagicRecipeConstants.MAGICRECIPE_ARGS_TITLE_KEY, recipeItems.get(index));
+		recipePageFragment.setArguments(args);
+		return recipePageFragment;
+	}
+
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

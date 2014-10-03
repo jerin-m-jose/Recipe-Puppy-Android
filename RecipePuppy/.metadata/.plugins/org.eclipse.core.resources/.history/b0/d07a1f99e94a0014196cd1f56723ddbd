@@ -1,0 +1,32 @@
+package com.jerin.utilities;
+
+import android.net.Uri;
+import android.os.Bundle;
+
+public class Utilities {
+
+	private static final String URL_SCHEME = "http";
+
+	/**
+	 * Builder utility method to generate http query
+	 * 
+	 * @param authority
+	 * @param path
+	 * @param parameters
+	 * @return
+	 */
+	public static Uri buildUri(String authority, String path, Bundle parameters) {
+		Uri.Builder builder = new Uri.Builder();
+		builder.authority(authority);
+		builder.path(path);
+		if (null != parameters) {
+			for (String key : parameters.keySet()) {
+				Object parameter = parameters.get(key);
+				if (parameter instanceof String) {
+					builder.appendQueryParameter(key, (String) parameter);
+				}
+			}
+		}
+		return builder.build();
+	}
+}

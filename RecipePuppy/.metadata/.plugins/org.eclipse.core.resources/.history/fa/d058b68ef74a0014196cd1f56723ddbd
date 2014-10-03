@@ -1,0 +1,60 @@
+package com.jerin.magicrecipe.data;
+
+import java.io.Serializable;
+
+/**
+ * Class representing a Recipe Item.
+ * 
+ * @author jerin
+ * 
+ */
+public class RecipeItem implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The title of the recipe.
+	 */
+	private String mRecipeTitle;
+
+	/**
+	 * The thumbnail url of the recipe.
+	 */
+	private String mImageUrl;
+
+	/**
+	 * The recipe's description.
+	 */
+	private String mRecipeIngredients;
+
+	public RecipeItem() {
+	}
+
+	public String getRecipeTitle() {
+		return mRecipeTitle;
+	}
+
+	public void setRecipeTitle(String mTitle) {
+		this.mRecipeTitle = mTitle;
+	}
+
+	public String getImageUrl() {
+		return mImageUrl;
+	}
+
+	public void setImageUrl(String mUrl) {
+		this.mImageUrl = mUrl;
+	}
+
+	public String getDescription() {
+		return mRecipeIngredients;
+	}
+
+	public void setDescription(String mDesc) {
+		this.mRecipeIngredients = mDesc;
+	}
+
+}
